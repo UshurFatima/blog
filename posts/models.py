@@ -20,7 +20,7 @@ class SearchWord(AbstractModel):
 
 
 class Post(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, blank=True)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, blank=True)  # category_id
     # для ManyToManyField - отдельная таблица
     search_words = models.ManyToManyField(SearchWord, blank=True)
     title = models.CharField(max_length=255)
